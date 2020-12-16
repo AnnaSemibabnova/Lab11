@@ -1,5 +1,4 @@
 #include<TFormula.h>
-
 #include<gtest.h>
 
 TEST(TFormula, can_create_TFormula_object)

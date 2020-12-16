@@ -175,7 +175,7 @@ void TFormula::SyntacticAnalysis(ICollection<Lexem*>* qI, ICollection<Lexem*>* q
 
 TFormula::TFormula()
 {
-	isReadyOutFormula = false;
+  isReadyOutFormula = false;
     inpFormula = "";
     outFormula = "";
     qRevPolNot = new Queue<Lexem*>(maxSizeCollection);
@@ -184,18 +184,18 @@ TFormula::TFormula()
 TFormula::TFormula(const string& str)
 {
     if (str.length() == 0) throw logic_error("string_length_is_zero");
-	inpFormula = str;
+  inpFormula = str;
     outFormula = "";
-	isReadyOutFormula = false;
+  isReadyOutFormula = false;
     qRevPolNot = new Queue<Lexem*>(maxSizeCollection);
 }
 
 void TFormula::init(const string& str)
 {
     if (str.length() == 0) throw logic_error("string_length_is_zero");
-	inpFormula = str;
+  inpFormula = str;
     outFormula = "";
-	isReadyOutFormula = false;
+  isReadyOutFormula = false;
     while(!qRevPolNot->isEmpty())
     {
         qRevPolNot->pop();
@@ -204,13 +204,13 @@ void TFormula::init(const string& str)
 
 const string& TFormula::getInpFormula() const
 {
-	return inpFormula;
+  return inpFormula;
 }
 
 const string& TFormula::getOutFormula() const
 {
     if (!isReadyOutFormula) throw logic_error("the_output_formula_is_not_ready");
-	return outFormula;
+  return outFormula;
 }
 
 void TFormula::conversToRevPolNot()
@@ -319,9 +319,9 @@ void TFormula::conversToRevPolNot()
         outFormula += l->s;
     }
     isReadyOutFormula = true;
-	delete q;
-	delete qN;
-	delete s;
+  delete q;
+  delete qN;
+  delete s;
 }
 
 int TFormula::calcArithmExp()
@@ -379,7 +379,7 @@ int TFormula::calcArithmExp()
             }
         }
     }
-	int ans = s->pop()->val;
-	delete s;
-	return ans;
+  int ans = s->pop()->val;
+  delete s;
+  return ans;
 }
